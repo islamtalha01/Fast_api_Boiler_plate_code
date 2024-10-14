@@ -13,11 +13,9 @@ from app.db.schemas import UserCreate, UserEdit, User, UserOut
 from app.core.auth import get_current_active_user, get_current_active_superuser
 
 from fastapi import FastAPI
-from app.api.api_v1.routers.agents import agents_router
 
 app = FastAPI()
 
-app.include_router(agents_router, prefix="/agents", tags=["agents"])
 
 users_router = r = APIRouter()
 
@@ -75,7 +73,7 @@ async def user_create(
     request: Request,
     user: UserCreate,
     db=Depends(get_db),
-    current_user=Depends(get_current_active_superuser),
+    #current_user=Depends(get_current_active_superuser),
 ):
     # """
     #Create a new user

@@ -56,7 +56,7 @@ async def user_details(
     request: Request,
     user_id: int,
     db=Depends(get_db),
-    current_user=Depends(get_current_active_superuser),
+    #current_user=Depends(get_current_active_superuser),
 ):
     # """
     # Get any user details

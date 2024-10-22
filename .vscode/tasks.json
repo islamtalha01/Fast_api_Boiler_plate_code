@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run FastAPI",
+      "type": "shell",
+      "command": "uvicorn",
+      "args": [
+        "app.main:app", 
+        "--host", "127.0.0.1", 
+        "--port", "8000", 
+        "--reload"
+      ],
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "Task to run FastAPI server"
+    }
+  ]
+}

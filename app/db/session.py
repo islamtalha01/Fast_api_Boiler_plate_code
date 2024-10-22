@@ -6,7 +6,7 @@ from fastapi import Depends
 
 engine = create_engine(
     # config.SQLALCHEMY_DATABASE_URI,
-    "postgresql://postgres:727272@localhost:5432/ANWARSON DATA", #port changed from 5433 to 5432 and admin to 1234567890
+    "postgresql://postgres:727272@localhost:5432/ANWARSON DATA",
 )
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 

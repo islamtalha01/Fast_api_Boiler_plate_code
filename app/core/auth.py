@@ -60,16 +60,20 @@ def authenticate_user(db, email: str, password: str):
 
 
 def sign_up_new_user(db, email: str, password: str):
-    user = get_user_by_email(db, email)
-    if user:
-        return False  # User already exists
-    new_user = create_user(
-        db,
-        schemas.UserCreate(
-            email=email,
-            password=password,
-            is_active=True,
-            is_superuser=False,
-        ),
-    )
-    return new_user
+    try:
+        user = get_user_by_email(db, email)
+        if user:
+            return False  # User already exists
+        new_user = create_user(
+            db,
+            schemas.UserCreate(
+                email=email,
+                password=password,
+                is_active=True,
+                is_superuser=False,
+            ),
+        )
+        return new_user
+    except Exception as e:
+        print(f"Error during user signup: {e}")
+        raise HTTPException(status_code=500, detail="Internal Server Error")

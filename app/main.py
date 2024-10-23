@@ -23,7 +23,7 @@ app = FastAPI(
 
 origins = ["*"]
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/token")  # Ensure token URL is correct
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/token")  
 
 @app.middleware("http")
 async def db_session_middleware(request: Request, call_next):

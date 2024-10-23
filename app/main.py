@@ -11,6 +11,7 @@ from app.db.session import SessionLocal
 from app.core.auth import get_current_active_user
 from app import tasks
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.security import OAuth2PasswordBearer
 
 from app.db.session import Base, engine
 
@@ -21,6 +22,8 @@ app = FastAPI(
 )
 
 origins = ["*"]
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/token")  # Ensure token URL is correct
 
 @app.middleware("http")
 async def db_session_middleware(request: Request, call_next):

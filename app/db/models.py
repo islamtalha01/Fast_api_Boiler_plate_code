@@ -56,7 +56,7 @@ class Job(Base):
     wire_size = Column(Float)
     no_of_wires_connection = Column(Integer)
     jumper_wt_per_set = Column(Float)
-    total_wire_wt_winding_type = Column(String)
+    total_wire_wt = Column(String)
     lead_length = Column(Float)
     lead_size = Column(Float)
     no_of_leads = Column(Integer)

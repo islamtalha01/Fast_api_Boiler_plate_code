@@ -66,7 +66,7 @@ app.include_router(
 
 app.include_router(
     job_router,  # Include the job router here
-    prefix="/api/v1/jobs",  # Specify the prefix for job routes
+    prefix="/api/v1",  # Specify the prefix for job routes
     tags=["jobs"],  # Add a tag for jobs
     dependencies=[Depends(get_current_active_user)],  # Ensure the user is authenticated
 )

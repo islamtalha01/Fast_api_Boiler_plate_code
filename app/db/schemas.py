@@ -87,7 +87,7 @@ class Job(BaseModel):
     wire_size: str
     no_of_wires_connection: int
     jumper_wt_per_set: float
-    total_wire_wt_winding_type: str
+    total_wire_wt: str
     lead_length: float
     lead_size: str
     no_of_leads: int
